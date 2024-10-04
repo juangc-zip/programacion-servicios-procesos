@@ -33,6 +33,8 @@ public class CmdDir {
       } else {
         System.out.println("error: " + exitCode);
       }
+      
+      reader.close();
     } catch (Exception e) {
       e.printStackTrace();
     }

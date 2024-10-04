@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class LanzadorMultiplicador {
   public static void lanzarMultiplicador (int num1, int num2, String outputFile) throws IOException, InterruptedException {
-    ProcessBuilder pb = new ProcessBuilder ("java", "-cp", ".", "com.psp.Multiplicador", String.valueOf(num1), String.valueOf(num2));
+    ProcessBuilder pb = new ProcessBuilder ("java", "-cp", ".", "com.psp.ejercicio1.Multiplicador", String.valueOf(num1), String.valueOf(num2));
     pb.redirectError(new File("files" + File.separator + "error-" + System.currentTimeMillis() + ".log"));
     pb.redirectError(new File("files" + File.separator + outputFile));
     

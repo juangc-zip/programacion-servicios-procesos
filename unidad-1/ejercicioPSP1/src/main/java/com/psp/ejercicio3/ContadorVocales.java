@@ -29,10 +29,13 @@ public class ContadorVocales {
     char[] vocales = {'a', 'e', 'i', 'o', 'u'};
     ExecutorService executor = Executors.newFixedThreadPool(5);
     
+    String clase = "com.psp.ejercicio3.ContarVocal";
+    String classPath = ".;./target/classes/";
+    
     for (char vocal : vocales) {
       executor.execute(() -> {
         try {
-          ProcessBuilder pb = new ProcessBuilder("java", "ContarVocal", ficheroEntrada, String.valueOf(vocal));
+          ProcessBuilder pb = new ProcessBuilder("java","-cp", classPath, clase, ficheroEntrada, String.valueOf(vocal));
           pb.inheritIO();
           Process proceso = pb.start();
           proceso.waitFor();
